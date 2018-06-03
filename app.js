@@ -11,7 +11,7 @@ mongoose.Promise = global.Promise;
 app.set("view engine","ejs");
 
 app.use(bodyParser.urlencoded({extended:true}));
-
+app.use(express.static(__dirname + "/public"));
 mongoose.connect("mongodb://localhost/yelp_camp_v4", {useMongoClient: true});
 
 seedDB();
@@ -44,7 +44,7 @@ app.post("/campgrounds", function(req , res){
         } else{
             res.redirect("/campgrounds");
         }
-    })
+    });
 });
 
 //NEW - show form to create new campground
