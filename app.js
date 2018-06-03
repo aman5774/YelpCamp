@@ -12,7 +12,7 @@ var express     = require("express"),
 // requiring routes
 var commentRoutes       = require("./routes/comments"),
     campgroundRoutes    = require("./routes/campgrounds"),
-    indexRoutes          = require("./routes/index");
+    indexRoutes         = require("./routes/index");
 
 mongoose.Promise = global.Promise;
 
@@ -20,7 +20,7 @@ app.set("view engine","ejs");
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(__dirname + "/public"));
-mongoose.connect("mongodb://localhost/yelp_camp_v8", {useMongoClient: true});
+mongoose.connect("mongodb://localhost/yelp_camp_v9", {useMongoClient: true});
 
 
 //Using the temp DB for seeding the application with some data
