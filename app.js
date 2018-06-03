@@ -20,11 +20,11 @@ app.set("view engine","ejs");
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(__dirname + "/public"));
-mongoose.connect("mongodb://localhost/yelp_camp_v7", {useMongoClient: true});
+mongoose.connect("mongodb://localhost/yelp_camp_v8", {useMongoClient: true});
 
 
 //Using the temp DB for seeding the application with some data
-seedDB();
+//seedDB();
 
 // PASSPORT CONFIGURATION
 app.use(require("express-session")({
